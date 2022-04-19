@@ -34,7 +34,7 @@ local emergencyCharge = false
 local emergencyTemp = false
 
 monitor = f.periphSearch("monitor")
-inputfluxgate = f.periphSearch("flux_gate")
+inputfluxgate = f.periphSearch("flow_gate")
 fluxgate = peripheral.wrap(fluxgateSide)
 reactor = peripheral.wrap(reactorSide)
 
@@ -175,7 +175,7 @@ function update()
     end
 
     for k, v in pairs (ri) do
-      print(k.. ": ".. v)
+      print(k.. ": ".. tostring(v))
     end
     print("Output Gate: ", fluxgate.getSignalLowFlow())
     print("Input Gate: ", inputfluxgate.getSignalLowFlow())
